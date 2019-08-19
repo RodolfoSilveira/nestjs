@@ -34,17 +34,17 @@ export class BooksService {
     }
   }
 
-  async update(id: IBook, book: IBook, ): Promise<any> {
+  async update(id: IBook, book: IBook, ): Promise<void> {
     try {
-      return await this.bookRepository.update(id, book)
+      await this.bookRepository.update(id, book)
     } catch(err) {
       throw new InternalServerErrorException(err.message)
     }
   }
 
-  async delete(id: IBook): Promise<any> {
+  async delete(id: IBook): Promise<void> {
     try {
-      return await this.bookRepository.delete(id)
+      await this.bookRepository.delete(id)
     } catch(err) {
       throw new InternalServerErrorException(err.message)
     }
