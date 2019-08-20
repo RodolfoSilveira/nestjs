@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { BooksModule } from './books/books.module';
 import { UsersModule } from './users/users.module';
 import { AuthMiddleware } from './auth.middleware';
-
+import { PhotosModule } from './photos/photos.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -20,6 +20,7 @@ import { AuthMiddleware } from './auth.middleware';
     }),
     BooksModule,
     UsersModule,
+    PhotosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

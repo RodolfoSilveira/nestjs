@@ -1,5 +1,6 @@
 
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Photo } from '../photos/photo.entity';
 
 @Entity()
 export class Book {
@@ -20,4 +21,7 @@ export class Book {
 
   @Column()
   pages: string;
+
+  @OneToMany(type => Photo, photo => photo.book)
+  photos: Photo[];
 }
